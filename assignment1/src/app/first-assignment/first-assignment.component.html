@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Assignment 1</h1>
+    <p>Implement the solution within Angular in which, a text box is given along with a button.
+      User can enter any index of the series and at the button click; the page should display the number at that entered index.</p>
+    <p>series:2,3,10,15,26,35,50,63</p>
+    <div class="form-group">
+      <label for="number">Index No:</label>
+      <input type="text" class="form-control" #a  id="number" aria-describedby="emailHelp" placeholder="Enter an index">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="index=a.value">Submit</button>
+  <div *ngIf="index" class="solution">
+  <div *ngIf="index<series.length ;else error">
+    the number at that entered index is = {{series[index]}}
+  </div>
+  <ng-template #error>
+    The index entered is greater than the length of the series
+  </ng-template>
+  </div>
+  </div>
+  

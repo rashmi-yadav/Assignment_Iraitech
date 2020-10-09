@@ -1,0 +1,11 @@
+.other-phone{
+    padding:1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:50%;
+}
+
+button{
+    margin:1em;
+}

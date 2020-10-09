@@ -1,0 +1,28 @@
+<div class="container">
+  
+    <h1>Assignment 3</h1>
+    
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="numbers">        
+        <div *ngFor="let quantity of numbers().controls; let i=index" [formGroupName]="i" class="other-phone">
+          <span>
+              Enter Phone No.
+          </span>
+          <span>
+              <input type="text" formControlName="no" placeholder="Phone No" class="form-control other">
+          </span>
+          <span *ngIf="i>0">
+              <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
+          </span>
+        </div>
+        <button type="button" (click)="addQuantity()" class="btn btn-dark">Add another phone number</button>
+
+    </div>
+     
+      <button type="submit" class="btn btn-success">Submit</button>
+      
+    </form>
+      
+    <br/>
+    {{this.productForm.value | json}}
+  </div>
