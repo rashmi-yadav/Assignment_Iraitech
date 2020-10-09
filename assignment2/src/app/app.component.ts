@@ -8,7 +8,7 @@ import { XComponent } from './x/x.component';
 })
 export class AppComponent {
  
-  @ViewChild('container', { read: ViewContainerRef }) container;
+  @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;
 
   private _counter = 1;
 

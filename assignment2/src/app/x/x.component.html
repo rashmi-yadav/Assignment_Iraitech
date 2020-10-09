@@ -1,1 +1,21 @@
-<p>Dynamic Component {{ index }}</p>
+<mat-card>
+    <mat-card-header class="container">
+        <div>
+            <p>{{title}} </p>
+        </div>
+        <mat-icon (click)="edit=!edit">edit</mat-icon>
+    </mat-card-header>
+    <mat-card-subtitle *ngIf="edit">
+            <mat-form-field class="example-form-field">
+                <mat-label>Change Title</mat-label>
+                <input matInput type="text" #txt>
+              </mat-form-field>
+            <button (click)="changeTitle(txt)">Save</button>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <button mat-button color="primary" (click)="add()">
+            <mat-icon>add</mat-icon>
+        </button>
+        <div #container></div>
+    </mat-card-content>
+</mat-card>
