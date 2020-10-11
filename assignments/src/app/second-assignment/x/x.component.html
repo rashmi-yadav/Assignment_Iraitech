@@ -1,0 +1,42 @@
+<!-- <mat-card>
+    <mat-card-header class="container">
+        <div>
+            <p>{{title}} </p>
+        </div>
+        <mat-icon (click)="edit=!edit">edit</mat-icon>
+    </mat-card-header>
+    <mat-card-subtitle *ngIf="edit">
+            <mat-form-field class="example-form-field">
+                <mat-label>Change Title</mat-label>
+                <input matInput type="text" #txt>
+              </mat-form-field>
+            <button (click)="changeTitle(txt)">Save</button>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <button mat-button color="primary" (click)="add()">
+            <mat-icon>add</mat-icon>
+        </button>
+        <div #container></div>
+    </mat-card-content>
+</mat-card> -->
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{title}}
+            <svg width="1em" height="12px" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)="edit=!edit">
+                <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+             </svg>
+        </h5>
+       <h6 class="card-subtitle" *ngIf="edit">
+        <div class="input-group mb-3">
+            <input type="text" #txt class="form-control" placeholder="Change Title" aria-label="Title" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="changeTitle(txt)">Change</button>
+            </div>
+          </div>
+       </h6>
+       <button class="btn btn-link" (click)="add()">+</button>
+       <div #container></div>
+    </div>
+</div>
